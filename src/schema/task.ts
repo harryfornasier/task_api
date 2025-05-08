@@ -1,4 +1,3 @@
-import SchemaBuilder from "@pothos/core";
 import { builder } from "./builder";
 
 interface Task {
@@ -17,10 +16,10 @@ TaskRef.implement({
     title: t.exposeString("title"),
     completed: t.exposeBoolean("completed"),
     createdAt: t.expose("createdAt", {
-      type: Date,
+      type: "Date",
     }),
     updatedAt: t.expose("updatedAt", {
-      type: Date,
+      type: "Date",
     }),
   }),
 });

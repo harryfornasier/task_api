@@ -16,13 +16,3 @@ const { url } = await startStandaloneServer(server, {
 });
 
 console.log(`🚀 Server ready at ${url}`);
-
-const tasks = [
-  {
-    id: "1",
-    title: "Do the dishes",
-    completed: "false",
-    createdAt: "1746705914",
-    updatedAt: "1746705914",
-  },
-];
