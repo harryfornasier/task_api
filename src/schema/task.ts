@@ -1,7 +1,5 @@
 import SchemaBuilder from "@pothos/core";
-
-const builder = new SchemaBuilder({});
-const TaskRef = builder.objectRef<Task>("Task");
+import { builder } from "./builder";
 
 interface Task {
   id: string;
@@ -10,6 +8,8 @@ interface Task {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export const TaskRef = builder.objectRef<Task>("Task");
 
 TaskRef.implement({
   fields: (t) => ({
