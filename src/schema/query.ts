@@ -1,5 +1,8 @@
+import { PrismaClient } from "../generated/prisma";
 import { builder } from "./builder";
 import { TaskRef } from "./task";
+
+export const prisma = new PrismaClient();
 
 builder.queryType({
   fields: (t) => ({
@@ -10,6 +13,6 @@ builder.queryType({
   }),
 });
 
-function getTasks(): any {
-  throw new Error("Function not implemented.");
+async function getTasks() {
+  return prisma.task.findMany();
 }
