@@ -8,11 +8,16 @@ builder.queryType({
   fields: (t) => ({
     tasks: t.field({
       type: [TaskRef],
-      resolve: () => getTasks(),
+      args: {
+        search: t.arg.string({ required: false }),
+      },
+      resolve: async (_parent, args) => getTasks(args.search ?? undefined),
     }),
   }),
 });
 
-async function getTasks() {
-  return prisma.task.findMany();
+async function getTasks(search?: string) {
+  return prisma.task.findMany({
+    where: search ? { title: { contains: search } } : undefined,
+  });
 }
