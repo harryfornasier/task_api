@@ -1,16 +1,6 @@
 import { builder } from "./builder";
 
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export const TaskRef = builder.objectRef<Task>("Task");
-
-TaskRef.implement({
+export const TaskRef = builder.objectType("Task", {
   fields: (t) => ({
     id: t.exposeID("id"),
     title: t.exposeString("title"),
