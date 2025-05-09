@@ -1,26 +1,15 @@
-import SchemaBuilder from "@pothos/core";
+import { builder } from "./builder";
 
-const builder = new SchemaBuilder({});
-const TaskRef = builder.objectRef<Task>("Task");
-
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-TaskRef.implement({
+export const TaskRef = builder.objectType("Task", {
   fields: (t) => ({
     id: t.exposeID("id"),
     title: t.exposeString("title"),
     completed: t.exposeBoolean("completed"),
     createdAt: t.expose("createdAt", {
-      type: Date,
+      type: "Date",
     }),
     updatedAt: t.expose("updatedAt", {
-      type: Date,
+      type: "Date",
     }),
   }),
 });
