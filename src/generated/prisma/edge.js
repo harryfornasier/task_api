@@ -154,8 +154,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Task {\n  id        String   @id @default(uuid())\n  title     String\n  completed Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n",
-  "inlineSchemaHash": "b0282c7d7f90da039ffeaf02da771ceb17381fdaf32002824a158f04c4df3466",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ngenerator pothos {\n  provider = \"prisma-pothos-types\"\n  output   = \"./generated/pothos-types.ts\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Task {\n  id        String   @id @default(uuid())\n  title     String\n  completed Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n",
+  "inlineSchemaHash": "61f4224248b2a304f6e7ca43b179f9826ad29ecf89b295d64eefa34808cb7396",
   "copyEngine": true
 }
 config.dirname = '/'

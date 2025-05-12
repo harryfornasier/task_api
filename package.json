@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-  "dev": "tsx src/index.ts",
-  "generate": "prisma generate",
-  "build": "tsc",
-  "seed" : "node prisma/seed.ts",
-  "start": "npm run build && node dist/index.js"
+    "dev": "tsx src/index.ts",
+    "generate": "prisma generate",
+    "build": "tsc",
+    "seed": "node prisma/seed.ts",
+    "start": "npm run build && node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@apollo/server": "^4.12.0",
     "@pothos/core": "^4.6.2",
+    "@pothos/plugin-prisma": "^4.8.1",
     "@prisma/client": "^6.7.0",
     "graphql": "^16.11.0",
     "graphql-scalars": "^1.24.2"

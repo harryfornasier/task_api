@@ -21,3 +21,9 @@ async function getTasks(search?: string) {
     where: search ? { title: { contains: search } } : undefined,
   });
 }
+
+export async function getTaskById(id: string) {
+  return prisma.task.findUnique({
+    where: { id },
+  });
+}
