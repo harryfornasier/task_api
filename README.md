@@ -40,6 +40,6 @@ Ensure you have the following installed:
 
 5. **Start the Application**
    ```
-   npm run dev
+   npm start
    ```
 ---
