@@ -1,6 +1,6 @@
 // src/schema/task.ts
-import { builder } from "./builder";
-import { prisma } from "./db";
+import { builder } from "./builder.js";
+import { prisma } from "./db.js";
 
 builder.prismaObject("Task", {
   fields: (t) => ({

@@ -1,9 +1,8 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { builder } from "../src/schema/builder";
-import { prisma } from "../src/schema/db";
-
-import "../src/schema/schema";
+import { builder } from "../src/schema/builder.js";
+import { prisma } from "../src/schema/db.js";
+import "../src/schema/schema.js";
 
 const schema = builder.toSchema();
 
