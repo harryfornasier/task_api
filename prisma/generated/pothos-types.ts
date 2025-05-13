@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { Prisma, Task } from "/Users/harry/task_api/src/generated/prisma/index.js";
+import type { Prisma, Task } from "/Users/harry/task_api/node_modules/@prisma/client/index.js";
 export default interface PrismaTypes {
     Task: {
         Name: "Task";
