@@ -3,7 +3,11 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+}
+
+generator pothos {
+  provider = "prisma-pothos-types"
+  output = "./generated/pothos-types.ts"
 }
 
 datasource db {
@@ -12,5 +16,9 @@ datasource db {
 }
 
 model Task {
-  id Int @id @default(autoincrement())
+  id        String   @id @default(uuid())
+  title     String
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

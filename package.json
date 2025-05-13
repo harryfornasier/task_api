@@ -1,10 +1,13 @@
 {
   "name": "task_api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "dev": "tsx src/index.ts",
+    "generate": "prisma generate",
+    "build": "tsc",
+    "seed": "node prisma/seed.ts",
+    "start": "npm run build && node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +17,10 @@
   "dependencies": {
     "@apollo/server": "^4.12.0",
     "@pothos/core": "^4.6.2",
+    "@pothos/plugin-prisma": "^4.8.1",
+    "@prisma/client": "^6.7.0",
     "graphql": "^16.11.0",
-    "graphql-yoga": "^5.13.4"
+    "graphql-scalars": "^1.24.2"
   },
   "devDependencies": {
     "@types/node": "^22.15.14",
